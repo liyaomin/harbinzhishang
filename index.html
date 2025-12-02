@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈尔滨至晌网络科技有限公司 - 领先的软件开发与数字化服务商</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #2c3e50;
+            --accent-color: #0dcaf0;
+            --light-bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #444;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--secondary-color) !important;
+            margin-left: 15px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 40, 85, 0.9), rgba(0, 86, 179, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 50px;
+        }
+        .hero-btn {
+            background-color: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .hero-btn:hover {
+            background-color: #0bb5d8;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Section Styling */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 20px auto 0;
+        }
+
+        /* Services */
+        .service-box {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-bottom: 3px solid transparent;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Process */
+        .process-step {
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 0 10px rgba(13, 110, 253, 0.1);
+        }
+
+        /* Contact */
+        .contact-info-box {
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            height: 100%;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(13, 110, 253, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            padding: 60px 0 20px;
+        }
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: var(--accent-color);
+        }
+        .copyright {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <!-- 使用 Base64 SVG 直接嵌入 Logo，无需外部图片 -->
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzAwNTZiMyIvPgo8cGF0aCBkPSJNMTIgMTJIMjhMMTIgMjhIMjgiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==" alt="Logo" class="me-2" height="40">
+                哈尔滨至晌
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">关于我们</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">解决方案</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">服务流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">联系我们</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary ms-3 rounded-pill px-4 d-none d-lg-block">获取报价</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-3 fw-bold mb-4">用技术驱动商业未来</h1>
+                    <p class="lead mb-5 opacity-75">哈尔滨至晌网络科技有限公司，专注高端软件定制与数字化转型。我们不仅仅是代码的编写者，更是您商业成功的技术合伙人。</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#services" class="hero-btn text-decoration-none">探索服务</a>
+                        <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold">联系咨询</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3 shadow-lg" alt="About Us">
+                        <div class="position-absolute bottom-0 end-0 bg-white p-4 rounded shadow-lg m-n4 d-none d-md-block" style="max-width: 200px;">
+                            <h3 class="text-primary fw-bold mb-0">10+</h3>
+                            <p class="small text-muted mb-0">年行业技术沉淀</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 ps-lg-5">
+                    <h6 class="text-primary text-uppercase fw-bold ls-md">关于哈尔滨至晌</h6>
+                    <h2 class="mb-4">打造极致用户体验的<br>数字产品</h2>
+                    <p class="text-muted mb-4">哈尔滨至晌网络科技有限公司坐落于哈尔滨高新技术产业开发区，是一家集软件开发、系统集成、技术咨询于一体的创新型科技企业。</p>
+                    <p class="text-muted mb-4">我们拥有一支由资深架构师、全栈工程师和UI/UX设计师组成的精英团队。我们深知，每一个成功的项目背后，都是对细节的极致追求和对客户需求的深刻理解。</p>
+                    
+                    <div class="row g-4 mt-2">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <span class="fw-bold">全栈技术能力</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <span class="fw-bold">敏捷开发流程</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <span class="fw-bold">源码交付保障</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                <span class="fw-bold">7x24h 运维支持</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h6>我们的专长</h6>
+                <h2>全方位技术解决方案</h2>
+                <p class="text-muted mt-3">覆盖从咨询、设计、开发到运维的全生命周期服务</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="bi bi-laptop"></i></div>
+                        <h4>企业级软件定制</h4>
+                        <p class="text-muted">针对企业复杂业务场景，定制开发ERP、CRM、SCM等管理系统，实现业务流程数字化、智能化。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="bi bi-phone"></i></div>
+                        <h4>移动应用开发</h4>
+                        <p class="text-muted">原生iOS/Android开发及Flutter跨平台方案，打造高性能、高体验的移动端产品，抢占移动流量。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="bi bi-wechat"></i></div>
+                        <h4>微信生态开发</h4>
+                        <p class="text-muted">深耕微信生态，提供小程序、公众号、企业微信应用开发，助力企业构建私域流量池。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="bi bi-cloud-check"></i></div>
+                        <h4>云计算与大数据</h4>
+                        <p class="text-muted">提供云架构设计、数据迁移、大数据分析看板服务，让数据成为企业决策的核心驱动力。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="bi bi-shop"></i></div>
+                        <h4>电商平台搭建</h4>
+                        <p class="text-muted">B2B、B2C、O2O全模式电商系统开发，支持高并发秒杀、分销裂变等复杂营销场景。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-box">
+                        <div class="service-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h4>物联网(IoT)解决方案</h4>
+                        <p class="text-muted">软硬结合，提供设备接入、数据采集、远程控制等物联网平台开发服务，赋能工业4.0。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 开发流程 -->
+    <section id="process" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h6>合作流程</h6>
+                <h2>标准化交付体系</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h5>需求分析</h5>
+                        <p class="small text-muted">深度沟通，梳理业务逻辑，输出原型图与需求文档。</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h5>UI/UX设计</h5>
+                        <p class="small text-muted">视觉设计与交互设计，打造符合品牌调性的界面。</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h5>敏捷开发</h5>
+                        <p class="small text-muted">代码编写，模块化开发，定期汇报进度，快速迭代。</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h5>测试交付</h5>
+                        <p class="small text-muted">严格测试，部署上线，提供源码交付与操作培训。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="section-title text-start">
+                        <h6>联系我们</h6>
+                        <h2>开启您的数字化之旅</h2>
+                        <p class="text-muted mt-3">无论您有任何技术难题或项目需求，欢迎随时联系我们。我们的专家团队将在24小时内为您提供专业建议。</p>
+                    </div>
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-center">
+                            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">公司地址</h6>
+                                <p class="text-muted mb-0">哈尔滨高新技术产业开发区科技创新城创新创业广场19号楼B535-134室</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">电子邮箱</h6>
+                                <p class="text-muted mb-0">dev@harbinzhishang.asia</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">联系电话</h6>
+                                <p class="text-muted mb-0">13072382284</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-info-box">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">您的姓名</label>
+                                    <input type="text" class="form-control" placeholder="请输入姓名">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">联系电话</label>
+                                    <input type="tel" class="form-control" placeholder="请输入手机号">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">需求类型</label>
+                                    <select class="form-select">
+                                        <option selected>请选择服务类型</option>
+                                        <option value="1">软件定制开发</option>
+                                        <option value="2">移动APP/小程序</option>
+                                        <option value="3">网站建设</option>
+                                        <option value="4">其他咨询</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">需求描述</label>
+                                    <textarea class="form-control" rows="4" placeholder="请简要描述您的项目需求..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">提交需求</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-white mb-3">哈尔滨至晌</h5>
+                    <p class="small">专注于为企业提供高品质的软件开发服务，助力企业数字化转型。我们坚持技术创新，以客户成功为己任。</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>快速链接</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>服务范围</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#">企业管理系统</a></li>
+                        <li><a href="#">移动应用开发</a></li>
+                        <li><a href="#">微信小程序</a></li>
+                        <li><a href="#">大数据可视化</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>联系方式</h5>
+                    <ul class="list-unstyled small">
+                        <li><i class="bi bi-telephone me-2"></i> 13072382284</li>
+                        <li><i class="bi bi-envelope me-2"></i> dev@harbinzhishang.asia</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> 哈尔滨高新区科技创新城</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright text-center small">
+                <p class="mb-0">&copy; 2025 哈尔滨至晌网络科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
